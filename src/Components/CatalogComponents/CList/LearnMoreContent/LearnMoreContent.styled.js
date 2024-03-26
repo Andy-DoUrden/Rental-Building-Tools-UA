@@ -5,12 +5,23 @@ const LearnMoreWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 541px;
-  height: 752px;
+  width: 600px;
+  max-height: 80%;
   padding: 40px;
 
   border-radius: 24px;
   background: #fff;
+
+  overflow-y: auto;
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
 `;
 
 const ExitBtn = styled.svg`
@@ -21,8 +32,8 @@ const ExitBtn = styled.svg`
   stroke: #121417;
   fill: none;
 
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 
   transition: 300ms;
   cursor: pointer;
@@ -32,143 +43,88 @@ const ExitBtn = styled.svg`
   }
 `;
 
-const CarImageWrapper = styled.div`
+const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  max-width: 360px;
+  height: 320px;
+  margin: 0 auto;
+`;
+
+const Image = styled.img`
+  display: block;
+
+  width: auto;
+  max-height: 320px;
   border-radius: 14px;
-  background: #f3f3f2;
-  width: 461px;
-  height: 248px;
-  overflow: hidden;
 
-  background-image: url(${(props) => props.imgLink});
-  background-size: cover;
-  background-position: center;
+  object-fit: contain;
 `;
 
-const CarTitle = styled.h3`
-  color: #121417;
-  font-family: Manrope;
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+`;
+
+const Title = styled.p`
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+const TitleSpan = styled.span`
+  color: #0af;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+const CharactTitle = styled.p`
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 auto;
+`;
+
+const CharactList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 20px;
+  width: 100%;
+`;
+
+const CharactItem = styled.li`
+  display: flex;
+  gap: 5px;
+`;
+
+const CharactName = styled.p`
+  color: #000;
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
-  margin-top: 16px;
 `;
 
-const CarDesc = styled.p`
-  color: #121417;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  margin-top: 14px;
-`;
-
-const CarAccessoriesTitle = styled.h3`
-  color: #121417;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
+const CharactValue = styled.span`
+  color: #0af;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 20px;
-  margin-top: 24px;
-`;
-
-const CarAccessories = styled.p`
-  color: rgba(18, 20, 23, 0.5);
-  font-family: Manrope;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  margin-top: 8px;
-`;
-
-const CarConditionsTitle = styled.h3`
-  color: #121417;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  margin-top: 24px;
-`;
-
-const CarConditionsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  width: 461px;
-  height: 72px;
-  margin-top: 8px;
-`;
-
-const CarCondition = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-
-  height: 32px;
-  padding: 0 14px;
-  border-radius: 35px;
-  background: #f9f9f9;
-`;
-
-const CarConditionText = styled.p`
-  color: #363535;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.24px;
-`;
-
-const CarConditionTextSpan = styled.span`
-  color: #3470ff;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 18px;
-  letter-spacing: -0.24px;
-`;
-
-const ContactBtn = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 168px;
-  height: 44px;
-  margin-top: 24px;
-  border-radius: 12px;
-  background: #3470ff;
-
-  cursor: pointer;
-
-  color: #fff;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
 `;
 
 export {
   LearnMoreWrapper,
   ExitBtn,
-  CarImageWrapper,
-  CarTitle,
-  CarDesc,
-  CarAccessoriesTitle,
-  CarAccessories,
-  CarConditionsTitle,
-  CarConditionsWrapper,
-  CarCondition,
-  CarConditionText,
-  CarConditionTextSpan,
-  ContactBtn,
+  ImageWrapper,
+  Image,
+  TitleContainer,
+  Title,
+  TitleSpan,
+  CharactTitle,
+  CharactList,
+  CharactItem,
+  CharactName,
+  CharactValue,
 };

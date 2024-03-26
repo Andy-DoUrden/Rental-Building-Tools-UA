@@ -1,11 +1,4 @@
-import {
-  HeaderWrapper,
-  Navigation,
-  List,
-  ListItem,
-  StyledNavLink,
-  StyledLogo,
-} from "./Header.styled";
+import { HeaderWrapper, Navigation, List, ListItem, StyledNavLink, StyledLogo } from "./Header.styled";
 import icons from "../../images/icons.svg";
 const Header = () => {
   return (
@@ -22,7 +15,7 @@ const Header = () => {
             <StyledNavLink to="catalog">Catalog</StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to="favorites">Favorites</StyledNavLink>
+            <StyledNavLink to="favorites">Cart</StyledNavLink>
           </ListItem>
         </List>
       </Navigation>

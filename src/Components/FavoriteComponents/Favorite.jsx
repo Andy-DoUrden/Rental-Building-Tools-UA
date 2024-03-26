@@ -1,23 +1,29 @@
 import { nanoid } from "nanoid";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import handleIsFavorite from "../../Helpers/handleIsFavorite";
 import { addFavorite, removeFavorite } from "../../Redux/favoritesSlice";
 import icons from "../../images/icons.svg";
 import { Button } from "../UI/Button.styed";
+import Modal from "../UI/Modal/Modal.jsx";
+import LearnMoreContent from "../CatalogComponents/CList/LearnMoreContent/LearnMoreContent.jsx";
+
 import {
   FavoriteBtn,
   FavoriteIcon,
+  ImageWrapper,
   Image,
   List,
   ListItem,
-  Tag,
-  TagsList,
   Title,
   TitleContainer,
   TitleSpan,
 } from "../UI/ComponentList.styled.js";
 
 const Favorite = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState(null);
+
   const favorites = useSelector((state) => state.favorites.favorites);
   const dispatch = useDispatch();
 
@@ -31,45 +37,56 @@ const Favorite = () => {
       {favorites.length !== 0 ? (
         favorites.map((item) => (
           <ListItem key={nanoid()} id={item.id}>
-            <Image src={item.img} />
-            <FavoriteBtn
-              type="button"
-              onClick={() => handleFavoriteClick(item)}
-            >
-              <FavoriteIcon
-                isFavorite={handleIsFavorite(favorites, item)}
-                width={18}
-                height={18}
-              >
+            <ImageWrapper>
+              <Image src={item.img} />
+            </ImageWrapper>
+
+            <FavoriteBtn type="button" onClick={() => handleFavoriteClick(item)}>
+              <FavoriteIcon isFavorite={handleIsFavorite(favorites, item)} width={32} height={32}>
                 <use href={icons + "#heart"} />
               </FavoriteIcon>
             </FavoriteBtn>
+
             <TitleContainer>
+              <Title>{item.name}</Title>
               <Title>
-                {item.make} <TitleSpan>{item.model}</TitleSpan>, {item.year}
+                Тип: <TitleSpan>{item.type}</TitleSpan>
               </Title>
-              <Title>{item.rentalPrice}</Title>
+
+              <Title>
+                Ціна/день: <TitleSpan>{item.price}грн</TitleSpan>
+              </Title>
             </TitleContainer>
-            <TagsList>
-              <Tag>
-                {[
-                  item.address.split(",").splice(1, 2).join(" | "),
-                  item.rentalCompany,
-                  item.accessories[2],
-                  item.type,
-                  item.model,
-                  item.id,
-                  item.functionalities[0],
-                ]
-                  .filter((tag) => !!tag)
-                  .join(" | ")}
-              </Tag>
-            </TagsList>
-            <Button>Learn more</Button>
+
+            <Button
+              type="button"
+              onClick={() => {
+                setModalData(item);
+                setShowModal(!showModal);
+              }}
+            >
+              Детальніше
+            </Button>
           </ListItem>
         ))
       ) : (
         <div>No Favorites Found</div>
+      )}
+
+      {showModal && (
+        <Modal
+          onClose={() => {
+            setShowModal(false);
+          }}
+          showModal={showModal}
+        >
+          <LearnMoreContent
+            data={modalData}
+            onCrossClick={() => {
+              setShowModal(false);
+            }}
+          />
+        </Modal>
       )}
     </List>
   );

@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   favorites: [],
   loading: false,
-  error: "",
 };
 
 const favoritesSlice = createSlice({
@@ -17,9 +16,7 @@ const favoritesSlice = createSlice({
     },
     removeFavorite: (state, action) => {
       state.loading = true;
-      state.favorites = state.favorites.filter(
-        (item) => item.id !== action.payload.id
-      );
+      state.favorites = state.favorites.filter((item) => item.id !== action.payload.id);
       state.loading = false;
     },
   },

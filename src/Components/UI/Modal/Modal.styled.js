@@ -30,6 +30,14 @@ const ModalContainer = styled.div`
   align-items: center;
   gap: 20px;
 
+  width: 600px;
+  max-height: 100%;
+
+  border-radius: 24px;
+  background: #fff;
+
+  overflow-y: auto;
+
   scale: ${(props) => {
     return props.showModal ? "1" : "0";
   }};

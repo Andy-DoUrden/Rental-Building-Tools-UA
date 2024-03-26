@@ -16,29 +16,8 @@ const FormElementContainer = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  width: ${(props) => {
-    switch (props.selectType) {
-      case "brand":
-        return "224px";
-      case "price":
-        return "125px";
-      case "input":
-        return "474px";
-
-      default:
-        break;
-    }
-  }};
+  width: 300px;
   height: 74px;
-`;
-
-const SelectBtnTitle = styled.span`
-  color: #8a8a89;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
 `;
 
 const SelectBtn = styled.div`
@@ -46,14 +25,13 @@ const SelectBtn = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: ${(props) => {
-    return props.selectType === "brand" ? "224px" : "125px";
-  }};
+  width: 300px;
   height: 48px;
   padding: 0 18px;
+  margin-top: auto;
 
   border-radius: 14px;
-  background: #f7f7fb;
+  background: #fff;
 
   cursor: pointer;
   user-select: none;
@@ -94,9 +72,7 @@ const SelectContent = styled.div`
 
   display: flex;
 
-  width: ${(props) => {
-    return props.selectType === "brand" ? "224px" : "125px";
-  }};
+  width: 300px;
 `;
 
 const SelectOptions = styled.ul`
@@ -105,9 +81,7 @@ const SelectOptions = styled.ul`
   gap: 8px;
 
   width: 100%;
-  height: ${(props) => {
-    return props.selectType === "brand" ? "272px" : "188px";
-  }};
+  height: 300px;
   padding: 14px 8px 14px 18px;
 
   border-radius: 14px;
@@ -129,9 +103,9 @@ const SelectOptions = styled.ul`
 `;
 
 const SelectOptionsItem = styled.li`
-  width: 190px;
+  width: 100%;
   color: ${(props) => {
-    return props.itemValue === props.isItemActive ? "rgba(18, 20, 23)" : "rgba(18, 20, 23, 0.2)";
+    return props.itemValue === props.isItemActive ? "#0af" : "#000";
   }};
   font-family: Manrope;
   font-size: 16px;
@@ -143,7 +117,7 @@ const SelectOptionsItem = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: #121417;
+    color: #0af;
   }
 `;
 
@@ -155,56 +129,24 @@ const FormWrapper = styled.div`
   height: 48px;
 `;
 
-const InputText = styled.span`
-  position: absolute;
-
-  color: #121417;
-  font-family: Manrope;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-
-  pointer-events: none;
-
-  &:nth-last-of-type(1) {
-    top: 14px;
-    left: 24px;
-  }
-  &:nth-last-of-type(2) {
-    top: 14px;
-    left: 184px;
-  }
-`;
-
-const InputElement = styled.input`
+const FormInput = styled.input`
   display: flex;
-  justify-content: center;
   align-items: center;
 
-  width: 160px;
+  width: 300px;
   height: 48px;
+  padding: 0 18px;
 
-  border: none;
+  border-radius: 14px;
+
   outline: none;
-  border-radius: 14px 0px 0px 14px;
-  border-right: 1px solid rgba(138, 138, 137, 0.2);
-  background: #f7f7fb;
-  padding-left: 68px;
+  border: none;
 
-  color: #121417;
+  color: #000;
   font-family: Manrope;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px;
-
-  &:nth-last-of-type(1) {
-    border-radius: 0px 14px 14px 0px;
-    border-right: none;
-    margin-right: 1px;
-    padding-left: 48px;
-  }
 `;
 
 const FormSubmitBtn = styled.button`
@@ -233,7 +175,6 @@ const FormSubmitBtn = styled.button`
 export {
   FormContainer,
   FormElementContainer,
-  SelectBtnTitle,
   SelectBtn,
   SelectBtnText,
   SelectBtnIcon,
@@ -241,7 +182,6 @@ export {
   SelectOptions,
   SelectOptionsItem,
   FormWrapper,
-  InputText,
-  InputElement,
+  FormInput,
   FormSubmitBtn,
 };

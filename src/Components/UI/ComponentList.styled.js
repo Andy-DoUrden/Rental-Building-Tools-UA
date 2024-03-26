@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 const List = styled.ul`
   display: flex;
   justify-content: center;
@@ -14,21 +15,37 @@ const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   width: 274px;
-  height: 426px;
+  height: 500px;
   border-radius: 14px;
+  border: 2px solid #000;
   align-self: stretch;
+  background-color: #ffffff22;
+  padding: 10px;
+
+  transition: 300ms;
+
+  &:hover {
+    border-color: #fff;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  height: 260px;
+  margin: 0 auto;
 `;
 
 const Image = styled.img`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 
-  height: 268px;
+  width: 100%;
+  /* height: auto; */
   border-radius: 14px;
-  margin-bottom: 14px;
 
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 const FavoriteBtn = styled.button`
@@ -44,7 +61,7 @@ const FavoriteBtn = styled.button`
   border: none;
   outline: none;
 
-  z-index: 2;
+  z-index: 1;
 
   &:hover svg {
     scale: 1.2;
@@ -56,50 +73,36 @@ const FavoriteIcon = styled.svg`
   justify-content: center;
   align-items: center;
   stroke: ${(props) => {
-    return props.isFavorite ? "#3470FF" : "#fff";
+    return props.isFavorite ? "#3470FF" : "#000";
   }};
   fill: ${(props) => {
-    return props.isFavorite ? "#3470FF" : "none";
+    return props.isFavorite ? "#3470FF" : "#fff";
   }};
 
-  width: 18px;
-  height: 18px;
+  width: 32px;
+  height: 32px;
 
   transition: 300ms;
 `;
 
-const Title = styled.h3`
-  color: #121417;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-`;
-
 const TitleContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+const Title = styled.p`
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
 `;
 
 const TitleSpan = styled.span`
-  color: #3470ff;
+  /* color: #3470ff; */
+  color: #0af;
+  font-size: 20px;
+  font-weight: 500;
 `;
 
-const TagsList = styled.ul`
-  margin-bottom: 28px;
-`;
-
-const Tag = styled.p`
-  color: rgba(18, 20, 23, 0.5);
-`;
-export {
-  List,
-  ListItem,
-  Image,
-  FavoriteBtn,
-  FavoriteIcon,
-  TitleContainer,
-  Title,
-  TitleSpan,
-  TagsList,
-  Tag,
-};
+export { List, ListItem, ImageWrapper, Image, FavoriteBtn, FavoriteIcon, TitleContainer, Title, TitleSpan };

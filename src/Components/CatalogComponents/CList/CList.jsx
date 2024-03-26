@@ -8,11 +8,10 @@ import { Button } from "../../UI/Button.styed.js";
 import {
   FavoriteBtn,
   FavoriteIcon,
+  ImageWrapper,
   Image,
   List,
   ListItem,
-  Tag,
-  TagsList,
   Title,
   TitleContainer,
   TitleSpan,
@@ -20,7 +19,7 @@ import {
 import Loader from "../../UI/Loader.jsx";
 import Modal from "../../UI/Modal/Modal.jsx";
 import LearnMoreContent from "./LearnMoreContent/LearnMoreContent.jsx";
-import { useGetCarsQuery } from "../../../Redux/API/RTK.js";
+import { useGetGoodsQuery } from "../../../Redux/API/RTK.js";
 import { useSearchParams } from "react-router-dom";
 
 const CList = () => {
@@ -33,7 +32,7 @@ const CList = () => {
   const searchParamsObject = Object.fromEntries(searchParams.entries());
 
   const [limit, setLimit] = useState(12);
-  const { data, error, isLoading } = useGetCarsQuery({
+  const { data, error, isLoading } = useGetGoodsQuery({
     params: {
       ...searchParamsObject,
       limit,
@@ -45,27 +44,7 @@ const CList = () => {
     isFavorite ? dispatch(removeFavorite(item)) : dispatch(addFavorite(item));
   };
 
-  const tagsList = ({
-    address,
-    rentalCompany,
-    accessories,
-    type,
-    model,
-    id,
-    functionalities,
-  }) => {
-    return [
-      address.split(",").splice(1, 2).join(" | "),
-      rentalCompany,
-      accessories[2],
-      type,
-      model,
-      id,
-      functionalities[0],
-    ]
-      .filter((tag) => !!tag)
-      .join(" | ");
-  };
+  console.log(data);
 
   return (
     <List>
@@ -73,30 +52,29 @@ const CList = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        data.cars.map((item) => (
+        data.goods.map((item) => (
           <ListItem key={nanoid()} id={item.id}>
-            <Image src={item.img} />
-            <FavoriteBtn
-              type="button"
-              onClick={() => handleFavoriteClick(item)}
-            >
-              <FavoriteIcon
-                isFavorite={handleIsFavorite(favorites, item)}
-                width={18}
-                height={18}
-              >
+            <ImageWrapper>
+              <Image src={item.img} />
+            </ImageWrapper>
+
+            <FavoriteBtn type="button" onClick={() => handleFavoriteClick(item)}>
+              <FavoriteIcon isFavorite={handleIsFavorite(favorites, item)} width={32} height={32}>
                 <use href={icons + "#heart"} />
               </FavoriteIcon>
             </FavoriteBtn>
+
             <TitleContainer>
+              <Title>{item.name}</Title>
               <Title>
-                {item.make} <TitleSpan>{item.model}</TitleSpan>, {item.year}
+                Тип: <TitleSpan>{item.type}</TitleSpan>
               </Title>
-              <Title>{item.rentalPrice}</Title>
+
+              <Title>
+                Ціна/день: <TitleSpan>{item.price} грн</TitleSpan>
+              </Title>
             </TitleContainer>
-            <TagsList>
-              <Tag>{tagsList(item)}</Tag>
-            </TagsList>
+
             <Button
               type="button"
               onClick={() => {
@@ -104,16 +82,13 @@ const CList = () => {
                 setShowModal(!showModal);
               }}
             >
-              Learn more
+              Детальніше
             </Button>
           </ListItem>
         ))
       )}
       {data?.totalCount > limit && (
-        <Button
-          type="button"
-          onClick={() => setLimit((prevLimit) => prevLimit + 12)}
-        >
+        <Button type="button" onClick={() => setLimit((prevLimit) => prevLimit + 12)}>
           Load more
         </Button>
       )}

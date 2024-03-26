@@ -2,21 +2,66 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const API = createApi({
   reducerPath: "API",
+
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://bohdan-back.onrender.com/api/cars`,
-    prepareHeaders: (headers) => {
-      return headers;
-    },
+    baseUrl: `http://localhost:3000/api`,
   }),
-  tagTypes: ["Cars"],
+
+  tagTypes: ["Goods", "Orders"],
+
   endpoints: (builder) => ({
-    getCars: builder.query({
+    getGoods: builder.query({
       query: ({ params }) => ({
-        url: `/catalog`,
+        url: `/goods/catalog`,
         params,
       }),
-      providesTags: ["Cars"],
+      providesTags: ["Goods"],
+    }),
+    getOneGood: builder.query({
+      query: (id) => ({
+        url: `/goods/getOne/${id}`,
+      }),
+      providesTags: ["Goods"],
+    }),
+    addGood: builder.mutation({
+      query: (body) => ({
+        url: `/goods/getOne/addNew`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Goods"],
+    }),
+    getOrders: builder.query({
+      query: ({ params }) => ({
+        url: `/orders`,
+        params,
+      }),
+      providesTags: ["Orders"],
+    }),
+    addOrder: builder.mutation({
+      query: (body) => ({
+        url: `/orders/addOrder`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Orders"],
+    }),
+    updateOrder: builder.mutation({
+      query: (id, body) => ({
+        url: `/orders/updateOrder${id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Orders"],
     }),
   }),
 });
-export const { useGetCarsQuery } = API;
+
+export const {
+  useGetGoodsQuery,
+  useGetOneGoodQuery,
+  useAddGoodMutation,
+  useGetOrdersQuery,
+  useAddOrderMutation,
+  useUpdateOrderMutation,
+} = API;
