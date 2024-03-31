@@ -19,7 +19,7 @@ const ListItem = styled.li`
   border-radius: 14px;
   border: 2px solid #000;
   align-self: stretch;
-  background-color: #ffffff22;
+  background-color: #333;
   padding: 10px;
 
   transition: 300ms;
@@ -45,7 +45,7 @@ const Image = styled.img`
   /* height: auto; */
   border-radius: 14px;
 
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 const FavoriteBtn = styled.button`

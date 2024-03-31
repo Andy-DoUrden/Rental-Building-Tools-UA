@@ -8,14 +8,14 @@ const Header = () => {
           <svg width={40} height={40}>
             <use href={icons + "#carKey"} />
           </svg>
-          RCua
+          RBTua
         </StyledLogo>
         <List>
           <ListItem>
-            <StyledNavLink to="catalog">Catalog</StyledNavLink>
+            <StyledNavLink to="catalog">Каталог</StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to="favorites">Cart</StyledNavLink>
+            <StyledNavLink to="cart">Корзина</StyledNavLink>
           </ListItem>
         </List>
       </Navigation>

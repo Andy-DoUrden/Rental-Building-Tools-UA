@@ -7,6 +7,7 @@ const FormContainer = styled.form`
 
   margin: 0 auto;
   width: 859px;
+  height: 74px;
 `;
 
 const FormElementContainer = styled.div`

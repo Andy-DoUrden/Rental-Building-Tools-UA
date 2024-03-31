@@ -14,7 +14,7 @@ const MainBackground = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-image: url("https://media.architecturaldigest.com/photos/5de6d78c34c35b000880a948/16:9/w_2991,h_1682,c_limit/10_ss300p_ehra-lessien.jpg");
+  background-image: url("https://media1.tenor.com/m/Dx8XeOcQDpUAAAAd/gachi-gachi-muchi.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

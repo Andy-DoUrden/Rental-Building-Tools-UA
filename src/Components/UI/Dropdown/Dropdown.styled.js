@@ -1,14 +1,5 @@
 import styled from "@emotion/styled";
 
-const FormContainer = styled.form`
-  display: flex;
-  align-items: flex-end;
-  gap: 18px;
-
-  margin: 0 auto;
-  width: 859px;
-`;
-
 const FormElementContainer = styled.div`
   position: relative;
   display: flex;
@@ -16,7 +7,6 @@ const FormElementContainer = styled.div`
   gap: 8px;
 
   width: 300px;
-  height: 74px;
 `;
 
 const SelectBtn = styled.div`
@@ -27,7 +17,6 @@ const SelectBtn = styled.div`
   width: 300px;
   height: 48px;
   padding: 0 18px;
-  margin-top: auto;
 
   border-radius: 14px;
   background: #fff;
@@ -66,7 +55,7 @@ const SelectBtnIcon = styled.svg`
 
 const SelectContent = styled.div`
   position: absolute;
-  top: 78px;
+  top: 50px;
   left: 0;
 
   display: flex;
@@ -80,7 +69,6 @@ const SelectOptions = styled.ul`
   gap: 8px;
 
   width: 100%;
-  height: 300px;
   padding: 14px 8px 14px 18px;
 
   border-radius: 14px;
@@ -90,7 +78,6 @@ const SelectOptions = styled.ul`
 
   transition: 300ms;
 
-  overflow-y: scroll;
   opacity: ${(props) => {
     return props.isBrandDropDownOpen ? "1" : "0";
   }};
@@ -103,6 +90,7 @@ const SelectOptions = styled.ul`
 
 const SelectOptionsItem = styled.li`
   width: 100%;
+  height: 30px;
   color: ${(props) => {
     return props.itemValue === props.isItemActive ? "#0af" : "#000";
   }};
@@ -112,6 +100,7 @@ const SelectOptionsItem = styled.li`
   font-weight: 500;
   line-height: 20px;
 
+  border-radius: 14px;
   transition: 150ms;
   cursor: pointer;
 
@@ -120,67 +109,4 @@ const SelectOptionsItem = styled.li`
   }
 `;
 
-const FormWrapper = styled.div`
-  position: relative;
-  display: flex;
-
-  width: 474px;
-  height: 48px;
-`;
-
-const FormInput = styled.input`
-  display: flex;
-  align-items: center;
-
-  width: 300px;
-  height: 48px;
-  padding: 0 18px;
-
-  border-radius: 14px;
-
-  outline: none;
-  border: none;
-
-  color: #000;
-  font-family: Manrope;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-`;
-
-const FormSubmitBtn = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 136px;
-  height: 48px;
-  margin-left: 18px;
-  border-radius: 12px;
-  background: #3470ff;
-  border: none;
-  outline: none;
-
-  color: #fff;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
-
-  cursor: pointer;
-`;
-
-export {
-  FormContainer,
-  FormElementContainer,
-  SelectBtn,
-  SelectBtnText,
-  SelectBtnIcon,
-  SelectContent,
-  SelectOptions,
-  SelectOptionsItem,
-  FormWrapper,
-  FormInput,
-  FormSubmitBtn,
-};
+export { FormElementContainer, SelectBtn, SelectBtnText, SelectBtnIcon, SelectContent, SelectOptions, SelectOptionsItem };

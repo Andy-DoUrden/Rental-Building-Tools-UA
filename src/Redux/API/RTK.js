@@ -47,8 +47,8 @@ export const API = createApi({
       invalidatesTags: ["Orders"],
     }),
     updateOrder: builder.mutation({
-      query: (id, body) => ({
-        url: `/orders/updateOrder${id}`,
+      query: ({ id, body }) => ({
+        url: `/orders/updateOrder/${id}`,
         method: "PATCH",
         body,
       }),

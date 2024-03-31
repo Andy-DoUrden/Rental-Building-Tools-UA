@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import handleIsFavorite from "../../../Helpers/handleIsFavorite.js";
-import { addFavorite, removeFavorite } from "../../../Redux/favoritesSlice.js";
+import { addFavorite, removeFavorite } from "../../../Redux/cartSlice.js";
 import icons from "../../../images/icons.svg";
 import { Button } from "../../UI/Button.styed.js";
 import {
@@ -25,7 +25,7 @@ import { useSearchParams } from "react-router-dom";
 const CList = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState(null);
-  const favorites = useSelector((state) => state.favorites.favorites);
+  const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
 
   const [searchParams] = useSearchParams();
@@ -40,11 +40,9 @@ const CList = () => {
   });
 
   const handleFavoriteClick = (item) => {
-    const isFavorite = handleIsFavorite(favorites, item);
+    const isFavorite = handleIsFavorite(cart, item);
     isFavorite ? dispatch(removeFavorite(item)) : dispatch(addFavorite(item));
   };
-
-  console.log(data);
 
   return (
     <List>
@@ -59,7 +57,7 @@ const CList = () => {
             </ImageWrapper>
 
             <FavoriteBtn type="button" onClick={() => handleFavoriteClick(item)}>
-              <FavoriteIcon isFavorite={handleIsFavorite(favorites, item)} width={32} height={32}>
+              <FavoriteIcon isFavorite={handleIsFavorite(cart, item)} width={32} height={32}>
                 <use href={icons + "#heart"} />
               </FavoriteIcon>
             </FavoriteBtn>
