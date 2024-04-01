@@ -1,5 +1,7 @@
 import { Form, FormButton, FormInput, FormLabel } from "./CartForm.styled";
 import { useState } from "react";
+import { useAddOrderMutation } from "../../../Redux/API/RTK";
+import { useSelector } from "react-redux";
 
 const CartForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -7,6 +9,10 @@ const CartForm = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [adress, setAdress] = useState("");
+  const [rentStartDate, setRentStartDate] = useState("");
+  const [rentEndDate, setRentEndDate] = useState("");
+  const [addOrder] = useAddOrderMutation();
+  const goods = useSelector((state) => state.cart.cart);
 
   const resetForm = () => {
     setFirstName("");
@@ -18,27 +24,50 @@ const CartForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const normalizedFirstName = firstName.toLowerCase();
 
+    if (firstName === "" || lastName === "" || email === "" || number === "" || adress === "" || goods.length === 0) {
+      alert("У вас є не заповнені поля або пустий кошик!");
+      return;
+    }
+
+    const order = {
+      firstName,
+      lastName,
+      email,
+      number,
+      adress,
+      goods,
+      rentStartDate,
+      rentEndDate,
+    };
+
+    console.log(order);
+    addOrder(order);
     resetForm();
   };
 
   const handleChange = (event) => {
-    switch (event.currentTarget) {
+    switch (event.target.name) {
       case "firstName":
-        setFirstName(event.currentTarget.value);
+        setFirstName(event.target.value);
         break;
       case "lastName":
-        setLastName(event.currentTarget.value);
+        setLastName(event.target.value);
         break;
       case "email":
-        setEmail(event.currentTarget.value);
+        setEmail(event.target.value);
         break;
       case "number":
-        setNumber(event.currentTarget.value);
+        setNumber(event.target.value);
         break;
       case "adress":
-        setAdress(event.currentTarget.value);
+        setAdress(event.target.value);
+        break;
+      case "rentStartDate":
+        setRentStartDate(event.target.value);
+        break;
+      case "rentEndDate":
+        setRentEndDate(event.target.value);
         break;
 
       default:
@@ -53,11 +82,12 @@ const CartForm = () => {
         <FormInput
           type="text"
           name="firstName"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,30}"
           title="First name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={firstName}
           onChange={handleChange}
+          placeholder="Микола"
         />
       </FormLabel>
       <FormLabel htmlFor="">
@@ -65,11 +95,12 @@ const CartForm = () => {
         <FormInput
           type="text"
           name="lastName"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,30}"
           title="Last name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={lastName}
           onChange={handleChange}
+          placeholder="Байда"
         />
       </FormLabel>
 
@@ -79,8 +110,9 @@ const CartForm = () => {
           type="email"
           value={email}
           name="email"
-          pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+          pattern="[A-Za-zА-Яа-яЁёІіЇїЄєҐґ0-9.,\s-]{2,100}"
           onChange={handleChange}
+          placeholder="MykolaBayda@gmail.com"
         />
       </FormLabel>
 
@@ -92,6 +124,7 @@ const CartForm = () => {
           name="number"
           pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
           onChange={handleChange}
+          placeholder="+380123456789"
         />
       </FormLabel>
 
@@ -103,7 +136,18 @@ const CartForm = () => {
           name="adress"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           onChange={handleChange}
+          placeholder="м. Київ, обл. Київська, вул. Львівська 1, 02000"
         />
+      </FormLabel>
+
+      <FormLabel htmlFor="">
+        Дата бронювання
+        <FormInput type="date" name="rentStartDate" required value={rentStartDate} onChange={handleChange} />
+      </FormLabel>
+
+      <FormLabel htmlFor="">
+        Дата повернення
+        <FormInput type="date" name="rentEndDate" min={rentStartDate} required value={rentEndDate} onChange={handleChange} />
       </FormLabel>
 
       <FormButton type="submit">Запросити</FormButton>

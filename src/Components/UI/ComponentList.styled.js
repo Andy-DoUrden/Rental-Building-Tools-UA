@@ -104,5 +104,33 @@ const TitleSpan = styled.span`
   font-size: 20px;
   font-weight: 500;
 `;
+const MainTitle = styled.h1`
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.01em;
+  color: #fff;
+`;
 
-export { List, ListItem, ImageWrapper, Image, FavoriteBtn, FavoriteIcon, TitleContainer, Title, TitleSpan };
+const SecondaryTitle = styled.h2`
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.01em;
+  color: #fff;
+`;
+
+export {
+  List,
+  ListItem,
+  ImageWrapper,
+  Image,
+  FavoriteBtn,
+  FavoriteIcon,
+  TitleContainer,
+  Title,
+  TitleSpan,
+  MainTitle,
+  SecondaryTitle,
+};

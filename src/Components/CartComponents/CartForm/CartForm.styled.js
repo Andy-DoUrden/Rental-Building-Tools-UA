@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
   padding: 20px 20px;
   border: 2.5px solid black;
   border-radius: 15px;

@@ -19,6 +19,8 @@ import {
   Title,
   TitleContainer,
   TitleSpan,
+  MainTitle,
+  SecondaryTitle,
 } from "../UI/ComponentList.styled.js";
 
 const Favorite = () => {
@@ -35,7 +37,8 @@ const Favorite = () => {
 
   return (
     <>
-      <CartForm />
+      <MainTitle>Оформлення замовлення</MainTitle>
+      <SecondaryTitle>Ваші товари:</SecondaryTitle>
       <List>
         {cart.length !== 0 ? (
           cart.map((item) => (
@@ -92,6 +95,8 @@ const Favorite = () => {
           </Modal>
         )}
       </List>
+      <SecondaryTitle>Форма для оформлення</SecondaryTitle>
+      <CartForm />
     </>
   );
 };
