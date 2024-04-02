@@ -32,6 +32,7 @@ const ModalContainer = styled.div`
 
   width: 600px;
   max-height: 100%;
+  padding: 20px 0;
 
   border-radius: 24px;
   background: #fff;

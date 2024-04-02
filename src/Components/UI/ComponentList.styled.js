@@ -76,11 +76,11 @@ const FavoriteIcon = styled.svg`
     return props.isFavorite ? "#3470FF" : "#000";
   }};
   fill: ${(props) => {
-    return props.isFavorite ? "#3470FF" : "#fff";
+    return props.isFavorite ? "#3470FF" : "#aaa";
   }};
 
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 
   transition: 300ms;
 `;

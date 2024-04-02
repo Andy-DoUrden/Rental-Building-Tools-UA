@@ -57,7 +57,7 @@ const CList = () => {
             </ImageWrapper>
 
             <FavoriteBtn type="button" onClick={() => handleFavoriteClick(item)}>
-              <FavoriteIcon isFavorite={handleIsFavorite(cart, item)} width={32} height={32}>
+              <FavoriteIcon isFavorite={handleIsFavorite(cart, item)} width={40} height={40}>
                 <use href={icons + "#heart"} />
               </FavoriteIcon>
             </FavoriteBtn>

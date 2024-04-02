@@ -76,7 +76,7 @@ const Favorite = () => {
             </ListItem>
           ))
         ) : (
-          <div>No cart Found</div>
+          <div>Корзина пуста</div>
         )}
 
         {showModal && (
@@ -95,7 +95,7 @@ const Favorite = () => {
           </Modal>
         )}
       </List>
-      <SecondaryTitle>Форма для оформлення</SecondaryTitle>
+      <SecondaryTitle>Форма для оформлення:</SecondaryTitle>
       <CartForm />
     </>
   );

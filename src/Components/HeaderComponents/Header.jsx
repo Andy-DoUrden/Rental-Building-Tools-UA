@@ -6,7 +6,7 @@ const Header = () => {
       <Navigation>
         <StyledLogo to="/">
           <svg width={40} height={40}>
-            <use href={icons + "#carKey"} />
+            <use href={icons + "#iconn"} />
           </svg>
           RBTua
         </StyledLogo>

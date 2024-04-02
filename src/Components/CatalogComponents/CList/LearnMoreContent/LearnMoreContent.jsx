@@ -17,7 +17,6 @@ import {
 
 const LearnMoreContent = (data) => {
   const item = data.data;
-  console.log(item.characteristics);
 
   const characteristics = Object.entries(item.characteristics);
 

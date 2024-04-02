@@ -71,10 +71,30 @@ const OrderStatus = styled.p`
 `;
 
 const OrderUserDetails = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
-  font-size: 1.1rem;
   color: #fff;
 `;
 
-export { Container, MainTitle, ListOfOrders, Order, OrderButton, OrderStatus, OrderUserDetails };
+const OrderUserDetailsSpan = styled.span`
+  color: ${(props) => {
+    switch (props.status) {
+      case "pending":
+        return "#ffff99";
+
+      case "accepted":
+        return "#33bbff";
+
+      case "declined":
+        return "#ff6666";
+
+      case "completed":
+        return "#00cc66";
+
+      default:
+        return "#fff";
+    }
+  }};
+`;
+
+export { Container, MainTitle, ListOfOrders, Order, OrderButton, OrderStatus, OrderUserDetails, OrderUserDetailsSpan };

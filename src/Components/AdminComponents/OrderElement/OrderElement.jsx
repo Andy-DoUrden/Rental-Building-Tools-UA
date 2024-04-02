@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
-import Dropdown from "../../UI/dropDown/dropDown.jsx";
+import Dropdown from "../../UI/Dropdown/Dropdown.jsx";
 import { filters } from "../Filters/filtersValues.js";
 import Modal from "../../UI/Modal/Modal.jsx";
-import { Container, Order, OrderButton, OrderUserDetails } from "../Admin.styled.js";
+import { Container, Order, OrderButton, OrderUserDetails, OrderUserDetailsSpan } from "../Admin.styled.js";
 import { List, ImageWrapper, Image, ListItem, Title, TitleContainer, TitleSpan } from "../../UI/ComponentList.styled.js";
 import { useUpdateOrderMutation } from "../../../Redux/API/RTK.js";
+
+import { OrderTitle, OrederWrapper, OrderText, OrederTextSpan } from "./OrderElement.styled.js";
 
 const OrderElement = (data) => {
   const { item } = data;
@@ -29,7 +31,9 @@ const OrderElement = (data) => {
       <OrderUserDetails>
         Замовник: {item.firstName} {item.lastName}
       </OrderUserDetails>
-      <OrderUserDetails>Статус: {item.status}</OrderUserDetails>
+      <OrderUserDetails>
+        Статус: <OrderUserDetailsSpan status={item.status}>{item.status}</OrderUserDetailsSpan>
+      </OrderUserDetails>
       <Container>
         <Dropdown filters={filters} typeValue={typeValue} setTypeValue={setTypeValue} />
 
@@ -45,21 +49,54 @@ const OrderElement = (data) => {
           }}
           showModal={showModal}
         >
+          <OrderTitle>Деталі замовника:</OrderTitle>
+          <OrederWrapper>
+            <OrderText>
+              Замовник:{" "}
+              <OrederTextSpan>
+                {item.firstName} {item.lastName}
+              </OrederTextSpan>
+            </OrderText>
+
+            <OrderText>
+              Статус: <OrederTextSpan>{item.status}</OrederTextSpan>
+            </OrderText>
+
+            <OrderText>
+              Адреса: <OrederTextSpan>{item.address}</OrederTextSpan>
+            </OrderText>
+
+            <OrderText>
+              Телефон: <OrederTextSpan>{item.phone}</OrederTextSpan>
+            </OrderText>
+
+            <OrderText>
+              Пошта: <OrederTextSpan>{item.email}</OrederTextSpan>
+            </OrderText>
+
+            <OrderText>
+              Дата старту оренди: <OrederTextSpan>{item.rentStartDate}</OrederTextSpan>
+            </OrderText>
+
+            <OrderText>
+              Дата кінця оренди: <OrederTextSpan>{item.rentEndDate}</OrederTextSpan>
+            </OrderText>
+          </OrederWrapper>
           <List>
-            {item.goods.map((item) => (
-              <ListItem key={nanoid()} id={item[0].id}>
+            {item.goods.map((details) => (
+              <ListItem key={nanoid()} id={details[0].id}>
                 <ImageWrapper>
-                  <Image src={item[0].img} />
+                  <Image src={details[0].img} />
                 </ImageWrapper>
 
                 <TitleContainer>
-                  <Title>{item[0].name}</Title>
+                  <Title>{details[0].name}</Title>
                   <Title>
-                    Тип: <TitleSpan>{item[0].type}</TitleSpan>
+                    Тип: <TitleSpan>{details[0].type}</TitleSpan>
                   </Title>
 
                   <Title>
-                    Ціна/день: <TitleSpan>{item[0].price} грн</TitleSpan>
+                    Ціна/день: <TitleSpan>{details[0].price} грн</TitleSpan>
                   </Title>
                 </TitleContainer>
               </ListItem>

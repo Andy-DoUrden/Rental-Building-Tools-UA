@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 const HeaderWrapper = styled.header`
-  background-color: #0b44cd;
+  /* background-color: #0b44cd; */
+  background-color: #fa0;
 `;
 
 const Navigation = styled.nav`
@@ -51,8 +52,7 @@ const StyledNavLink = styled(NavLink)`
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid transparent;
-  transition: scale 100ms ease-in-out, border 100ms ease-in-out,
-    padding 150ms ease-in-out;
+  transition: scale 100ms ease-in-out, border 100ms ease-in-out, padding 150ms ease-in-out;
 `;
 
 const StyledLogo = styled(NavLink)`
