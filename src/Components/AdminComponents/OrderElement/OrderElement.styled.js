@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const OrderTitle = styled.h2`
-  color: #000;
+  color: #fff;
   font-size: 32px;
   text-align: center;
 `;
@@ -13,13 +13,13 @@ const OrederWrapper = styled.div`
 `;
 
 const OrderText = styled.p`
-  color: #000;
+  color: #fff;
   font-size: 24px;
   font-weight: 500;
 `;
 
 const OrederTextSpan = styled.span`
-  color: #00c;
+  color: #d80;
   font-size: 24px;
   font-weight: 500;
 `;

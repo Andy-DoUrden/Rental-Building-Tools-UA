@@ -8,6 +8,8 @@ const List = styled.ul`
   row-gap: 50px;
   column-gap: 29px;
   margin-top: 50px;
+
+  padding-bottom: 20px;
 `;
 
 const ListItem = styled.li`
@@ -19,13 +21,13 @@ const ListItem = styled.li`
   border-radius: 14px;
   border: 2px solid #000;
   align-self: stretch;
-  background-color: #333;
+  background-color: #333333aa;
   padding: 10px;
 
   transition: 300ms;
 
   &:hover {
-    border-color: #fff;
+    border-color: #d80;
   }
 `;
 
@@ -42,7 +44,6 @@ const Image = styled.img`
   display: block;
 
   width: 100%;
-  /* height: auto; */
   border-radius: 14px;
 
   object-fit: cover;
@@ -73,10 +74,10 @@ const FavoriteIcon = styled.svg`
   justify-content: center;
   align-items: center;
   stroke: ${(props) => {
-    return props.isFavorite ? "#3470FF" : "#000";
+    return props.isFavorite ? "#d80" : "#000";
   }};
   fill: ${(props) => {
-    return props.isFavorite ? "#3470FF" : "#aaa";
+    return props.isFavorite ? "#d80" : "#aaa";
   }};
 
   width: 40px;
@@ -99,8 +100,7 @@ const Title = styled.p`
 `;
 
 const TitleSpan = styled.span`
-  /* color: #3470ff; */
-  color: #0af;
+  color: #f90;
   font-size: 20px;
   font-weight: 500;
 `;

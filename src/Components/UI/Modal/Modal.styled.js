@@ -35,7 +35,7 @@ const ModalContainer = styled.div`
   padding: 20px 0;
 
   border-radius: 24px;
-  background: #fff;
+  background: #222;
 
   overflow-y: auto;
 

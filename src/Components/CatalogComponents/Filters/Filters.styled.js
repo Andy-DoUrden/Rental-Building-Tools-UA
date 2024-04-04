@@ -157,18 +157,21 @@ const FormSubmitBtn = styled.button`
   height: 48px;
   margin-left: 18px;
   border-radius: 12px;
-  background: #3470ff;
+  background-color: #d80;
   border: none;
   outline: none;
 
   color: #fff;
   font-family: Manrope;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
+  font-weight: 700;
+  transition: 300ms;
 
   cursor: pointer;
+  &:hover {
+    background-color: #c50;
+  }
 `;
 
 export {

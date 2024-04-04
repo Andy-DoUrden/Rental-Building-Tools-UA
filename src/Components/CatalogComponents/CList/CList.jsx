@@ -87,7 +87,7 @@ const CList = () => {
       )}
       {data?.totalCount > limit && (
         <Button type="button" onClick={() => setLimit((prevLimit) => prevLimit + 12)}>
-          Load more
+          Завантажити ще
         </Button>
       )}
 

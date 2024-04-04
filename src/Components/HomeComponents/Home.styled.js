@@ -2,13 +2,13 @@ import styled from "@emotion/styled";
 
 const BASE_TEXT_STYLE = `color: #fff;
 font-family: Manrope;
-font-size: 16px;
+font-size: 24px;
 font-style: normal;
 font-weight: 500;
-line-height: 24px;`;
+line-height: 32px;`;
 
 const MainBackground = styled.div`
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -19,7 +19,7 @@ const MainBackground = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  z-index: -1;
+  z-index: -1; */
 `;
 
 const MainWrapper = styled.div`
@@ -55,7 +55,7 @@ const InfoItem = styled.li`
   flex-direction: column;
   gap: 20px;
 
-  background-image: linear-gradient(#000000dd, #000000dd);
+  background-image: linear-gradient(#ffffff10, #ffffff10);
   border-radius: 20px;
   padding: 20px;
   width: 1200px;
@@ -63,10 +63,7 @@ const InfoItem = styled.li`
   transition: 300ms;
 
   &:hover {
-    background-color: #000000;
-  }
-  &:hover p {
-    text-shadow: 0 0 10px #ffffffbb;
+    background-color: #ffffff05;
   }
 `;
 
@@ -96,6 +93,8 @@ const InfoSublist = styled.ul`
 const InfoSubItem = styled.li`
   display: flex;
   flex-direction: column;
+
+  gap: 20px;
 `;
 
 const InfoSubItemTitle = styled.h3`

@@ -10,17 +10,17 @@ const LearnMoreWrapper = styled.div`
   padding: 40px;
 
   border-radius: 24px;
-  background: #fff;
+  background: #222;
 
   overflow-y: auto;
 
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.5);
+    background: #dd8800aa;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: #dd8800cc;
   }
 `;
 
@@ -29,8 +29,8 @@ const ExitBtn = styled.svg`
   top: 16px;
   right: 16px;
 
-  stroke: #121417;
-  fill: none;
+  stroke: #fff;
+  fill: #fff;
 
   width: 32px;
   height: 32px;
@@ -39,7 +39,7 @@ const ExitBtn = styled.svg`
   cursor: pointer;
 
   &:hover {
-    stroke: #3470ff;
+    stroke: #d80;
   }
 `;
 
@@ -70,21 +70,21 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.p`
-  color: #000;
+  color: #fff;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 const TitleSpan = styled.span`
-  color: #0af;
+  color: #d80;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 const CharactTitle = styled.p`
-  color: #000;
+  color: #fff;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0 auto;
 `;
 
@@ -103,15 +103,15 @@ const CharactItem = styled.li`
 `;
 
 const CharactName = styled.p`
-  color: #000;
+  color: #fff;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 const CharactValue = styled.span`
-  color: #0af;
-  font-size: 18px;
-  font-weight: 500;
+  color: #d80;
+  font-size: 20px;
+  font-weight: 700;
 `;
 
 export {

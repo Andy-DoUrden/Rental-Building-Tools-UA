@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const HeaderWrapper = styled.header`
   /* background-color: #0b44cd; */
-  background-color: #fa0;
+  background-color: #d80;
 `;
 
 const Navigation = styled.nav`
@@ -33,10 +33,15 @@ const ListItem = styled.li`
 
   cursor: pointer;
 
+  & a {
+    border: 1px solid white;
+    padding: 12px 50px;
+    background-color: #555;
+  }
+
   &:hover a {
     scale: 1.1;
     border: 1px solid white;
-    padding: 12px 50px;
   }
 
   &:active a {
@@ -49,7 +54,8 @@ const StyledNavLink = styled(NavLink)`
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-color: transparent;
+  font-size: 24px;
+  font-weight: 700;
   border-radius: 12px;
   border: 1px solid transparent;
   transition: scale 100ms ease-in-out, border 100ms ease-in-out, padding 150ms ease-in-out;
@@ -77,4 +83,8 @@ const StyledLogo = styled(NavLink)`
   }
 `;
 
-export { HeaderWrapper, Navigation, List, ListItem, StyledNavLink, StyledLogo };
+const StyledSvg = styled.svg`
+  stroke: #000;
+`;
+
+export { HeaderWrapper, Navigation, List, ListItem, StyledNavLink, StyledLogo, StyledSvg };

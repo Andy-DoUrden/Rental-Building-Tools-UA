@@ -48,8 +48,8 @@ const OrderButton = styled.button`
   border-radius: 12px;
   padding: 6px 20px;
   font-size: 18px;
-  font-weight: 500;
-  background-color: #0b44cd;
+  font-weight: 700;
+  background-color: #d80;
 
   color: #fff;
   border: none;
@@ -58,7 +58,7 @@ const OrderButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: #0af;
+    background-color: #c50;
   }
 `;
 

@@ -18,65 +18,80 @@ const Home = () => {
     <MainWrapper>
       <MainBackground />
       <MainTitle>
-        Welcome to <b>Rent Cars UA</b>
+        <b>Rental building tools UA [RBTUA]</b>
       </MainTitle>
-      <MainText>Discover the Freedom of Exploring Ukraine with Our Car Rental Services!</MainText>
+      <MainText>Запрокатуйте успіх з нами: ваше будівництво, наші рішення!</MainText>
 
       <InfoList>
         <InfoItem>
-          <InfoTitle>Explore Ukraine with Ease</InfoTitle>
+          <InfoTitle>Ласкаво просимо!</InfoTitle>
+          <InfoText>
+            {"Ласкаво просимо до RBTUA, вашого надійного партнера у сфері оренди будівельних електроприладів!."}
+          </InfoText>
+        </InfoItem>
+        <InfoItem>
+          <InfoTitle>Що ми пропонуємо</InfoTitle>
           <InfoText>
             {
-              "At RCua, we understand that every journey is an adventure waiting to unfold. Whether you're here for business or pleasure, our reliable and diverse fleet of vehicles is at your service. Navigate the scenic roads of Ukraine with comfort and style."
+              "Ми розуміємо, що успішні будівельні проекти потребують найкращого обладнання. Тому ми пропонуємо широкий вибір електроприладів від провідних виробників, які допоможуть вам забезпечити ефективну роботу на будівельному майданчику."
             }
           </InfoText>
         </InfoItem>
         <InfoItem>
-          <InfoTitle>Our Fleet</InfoTitle>
+          <InfoTitle>Наша мета</InfoTitle>
           <InfoText>
             {
-              "Choose from a wide range of vehicles to suit your travel needs. From compact cars for city exploration to spacious SUVs for family trips, we have the perfect ride for every occasion. All our vehicles are meticulously maintained to ensure a smooth and safe journey."
+              "Наша мета - забезпечити вас найвищою якістю обладнання та бездоганним сервісом. Ми ретельно перевіряємо кожен пристрій перед його відправленням, щоб ви могли бути впевнені в його надійності та функціональності."
             }
           </InfoText>
         </InfoItem>
         <InfoItem>
-          <InfoTitle>Seamless Rental Experience</InfoTitle>
+          <InfoTitle>Наші можливості</InfoTitle>
           <InfoText>
             {
-              "We believe in making your car rental experience as seamless as possible. Our user-friendly online booking platform allows you to reserve your preferred vehicle with just a few clicks. Enjoy transparent pricing, flexible rental periods, and convenient pickup/drop-off locations across Ukraine."
+              "Незалежно від того, чи вам потрібен компресор для пневматичних інструментів, електрогенератор для постачання електроенергії на будівництві, чи будь-який інший електроприлад, у нас є все необхідне для вашого успіху."
             }
           </InfoText>
         </InfoItem>
 
         <InfoItem>
-          <InfoTitle>Why Choose Us?</InfoTitle>
+          <InfoTitle>Чому ми?</InfoTitle>
           <InfoSublist>
             <InfoSubItem>
-              <InfoSubItemTitle>Quality Vehicles:</InfoSubItemTitle>
+              <InfoSubItemTitle>Наша якість говорить сама за себе:</InfoSubItemTitle>
               <InfoSubItemText>
-                Our fleet consists of well-maintained, modern vehicles from reputable brands.
+                Ми дбаємо про кожен пристрій, щоб ви могли мати впевненість у його бездоганній роботі.
               </InfoSubItemText>
             </InfoSubItem>
             <InfoSubItem>
-              <InfoSubItemTitle>Affordable Rates:</InfoSubItemTitle>
-              <InfoSubItemText>Enjoy competitive and transparent pricing with no hidden fees.</InfoSubItemText>
+              <InfoSubItemTitle>Різноманітність для вашого вибору:</InfoSubItemTitle>
+              <InfoSubItemText>
+                У нас великий асортимент електроприладів від провідних виробників, щоб ви могли знайти саме те, що підходить
+                вашим потребам.
+              </InfoSubItemText>
             </InfoSubItem>
             <InfoSubItem>
-              <InfoSubItemTitle>Convenience:</InfoSubItemTitle>
-              <InfoSubItemText>Pick up and drop off your vehicle at locations convenient for you.</InfoSubItemText>
+              <InfoSubItemTitle>Спрощений та ефективний процес:</InfoSubItemTitle>
+              <InfoSubItemText>
+                Наш сервіс спрямований на вашу зручність. Ми пропонуємо швидку та ефективну обробку замовлень, щоб ви могли
+                сконцентруватися на своєму будівельному проекті.
+              </InfoSubItemText>
             </InfoSubItem>
             <InfoSubItem>
-              <InfoSubItemTitle>Customer Service:</InfoSubItemTitle>
-              <InfoSubItemText>Our dedicated customer support team is ready to assist you at every step.</InfoSubItemText>
+              <InfoSubItemTitle>Ваш надійний партнер у будівництві:</InfoSubItemTitle>
+              <InfoSubItemText>
+                Ми ставимо ваш успіх на перше місце. З нами ви можете розраховувати на надійну підтримку та співпрацю на
+                кожному етапі вашого проекту.
+              </InfoSubItemText>
             </InfoSubItem>
           </InfoSublist>
         </InfoItem>
         <InfoItem>
-          <InfoTitle>Explore Beyond Boundaries</InfoTitle>
+          <InfoTitle>Уперед!</InfoTitle>
 
           <InfoText>
             {
-              "Embark on an unforgettable journey with RCua. Whether you're heading to bustling city centers, serene countryside, or historic landmarks, our cars will take you there with comfort and reliability."
+              "Зверніться до нас сьогодні, і дозвольте нам допомогти вам зробити ваш будівельний проект успішним та продуктивним!"
             }
           </InfoText>
         </InfoItem>

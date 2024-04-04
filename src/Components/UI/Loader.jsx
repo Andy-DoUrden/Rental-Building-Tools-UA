@@ -5,12 +5,12 @@ const Loader = () => {
     <Oval
       height={80}
       width={80}
-      color="#0B44CD"
+      color="#d80"
       wrapperStyle={{}}
       wrapperClass="loader"
       visible={true}
       ariaLabel="oval-loading"
-      secondaryColor="#3470FF"
+      secondaryColor="#c50"
       strokeWidth={6}
       strokeWidthSecondary={4}
     />

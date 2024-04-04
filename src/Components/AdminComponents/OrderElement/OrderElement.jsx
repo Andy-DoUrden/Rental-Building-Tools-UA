@@ -63,11 +63,11 @@ const OrderElement = (data) => {
             </OrderText>
 
             <OrderText>
-              Адреса: <OrederTextSpan>{item.address}</OrederTextSpan>
+              Адреса: <OrederTextSpan>{item.adress}</OrederTextSpan>
             </OrderText>
 
             <OrderText>
-              Телефон: <OrederTextSpan>{item.phone}</OrederTextSpan>
+              Телефон: <OrederTextSpan>{item.number}</OrederTextSpan>
             </OrderText>
 
             <OrderText>

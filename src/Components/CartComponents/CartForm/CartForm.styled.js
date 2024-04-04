@@ -4,25 +4,45 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: 20px auto;
-  padding: 20px 20px;
-  border: 2.5px solid black;
+  padding: 20px 20px 40px 20px;
   border-radius: 15px;
   width: 450px;
 `;
 
 const FormInput = styled.input`
-  margin-top: 10px;
   padding-left: 10px;
-  height: 30px;
-  border: 2px solid black;
+  height: 32px;
+  border: 2px solid #c50;
+  background-color: inherit;
   outline: none;
+
+  color: #fff;
+  font-size: 20px;
+
+  &::-webkit-calendar-picker-indicator {
+    width: 32px;
+    height: 32px;
+    background-color: #c50;
+
+    transition: 300ms;
+    cursor: pointer;
+  }
+
+  &::-webkit-calendar-picker-indicator:hover {
+    background-color: #d80;
+  }
+
+  &::-webkit-calendar-picker-indicator::-webkit-calendar-week-label {
+    background-color: #c50;
+  }
 `;
 
 const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
 
-  font-size: 18px;
+  margin-top: 10px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1.71;
   letter-spacing: 0.01em;
@@ -32,26 +52,21 @@ const FormLabel = styled.label`
 const FormButton = styled.button`
   margin-top: 15px;
   align-items: center;
-  background-color: #fee6e3;
+  background-color: #d80;
   border: 2px solid #111;
   border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
+  color: #fff;
   cursor: pointer;
-  margin-right: 10px;
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  height: 38px;
+  margin: 20px auto 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  height: 40px;
   justify-content: center;
-  line-height: 24px;
   width: 140px;
   padding: 0 20px;
   position: relative;
   text-align: center;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 
   &:after {
     background-color: #111;
@@ -63,17 +78,17 @@ const FormButton = styled.button`
     width: 100%;
     position: absolute;
     top: -2px;
-    transform: translate(8px, 8px);
+    transform: translate(0, 0);
     transition: transform 0.2s ease-out;
     z-index: -1;
   }
 
   &:hover:after {
-    transform: translate(0, 0);
+    transform: translate(8px, 8px);
   }
 
   &:active {
-    background-color: #ffdeda;
+    background-color: #fa0;
     outline: 0;
   }
 

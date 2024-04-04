@@ -20,7 +20,6 @@ const Admin = () => {
         <Filters />
         <MainTitle>Історія замовлень</MainTitle>
         {isLoading ? <Loader /> : data.orders.map((item) => <OrderElement key={item._id} item={item} />)}
-
         {error && <h1>Something went wrong</h1>}
       </ListOfOrders>
     </>

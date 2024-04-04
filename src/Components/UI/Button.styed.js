@@ -8,17 +8,18 @@ export const Button = styled.button`
   border-radius: 12px;
   margin-top: auto;
   padding: 12px 50px;
-  background-color: #0b44cd;
+  background-color: #d80;
 
   color: #fff;
   font-size: 16px;
   font-weight: 600;
   border: none;
+  text-shadow: 0px 0px 10px #000;
 
   transition: background-color 300ms;
 
   &:hover {
     cursor: pointer;
-    background-color: #0af;
+    background-color: #d40;
   }
 `;
