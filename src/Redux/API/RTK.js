@@ -4,7 +4,7 @@ export const API = createApi({
   reducerPath: "API",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://localhost:3000/api`,
+    baseUrl: `https://rental-back-gpve.onrender.com/api`,
   }),
 
   tagTypes: ["Goods", "Orders"],
