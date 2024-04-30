@@ -4,7 +4,7 @@ import { FormContainer, FormInput, FormSubmitBtn } from "./Filters.styled";
 
 import { filters } from "./filtersValues";
 import { useSearchParams } from "react-router-dom";
-import Dropdown from "../../UI/dropDown/dropDown";
+import Dropdown from "../../UI/Dropdown/Dropdown";
 
 const CatalogFilters = () => {
   const [typeValue, setTypeValue] = useState(null);
