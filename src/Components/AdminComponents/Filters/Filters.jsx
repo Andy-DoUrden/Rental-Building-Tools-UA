@@ -33,7 +33,7 @@ const CatalogFilters = () => {
         <FormContainer onSubmit={handleSubmit}>
           <Dropdown filters={filters} typeValue={typeValue} setTypeValue={setTypeValue} />
 
-          <FormInput placeholder="Вкажіть назву" onChange={(e) => setSearchValue(e.target.value)} />
+          <FormInput placeholder="Вкажіть прізвище" onChange={(e) => setSearchValue(e.target.value)} />
           <FormInput type="date" placeholder="Вкажіть дату" onChange={(e) => setDateValue(e.target.value)} />
 
           <FormSubmitBtn type="submit">Пошук</FormSubmitBtn>

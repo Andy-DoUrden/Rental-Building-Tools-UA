@@ -41,7 +41,7 @@ const Dropdown = ({ filters, typeValue, setTypeValue }) => {
           setIsBrandDropDownOpen(!isBrandDropDownOpen);
         }}
       >
-        <SelectBtnText>{typeValue ? typeValue : "оберіть тип"}</SelectBtnText>
+        <SelectBtnText>{typeValue ? typeValue : "Оберіть тип"}</SelectBtnText>
         <SelectBtnIcon width={20} height={20} isBrandDropDownOpen={isBrandDropDownOpen}>
           <use href={icons + "#arrowDown"} />
         </SelectBtnIcon>

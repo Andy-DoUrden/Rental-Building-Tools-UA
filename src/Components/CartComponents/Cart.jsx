@@ -37,8 +37,8 @@ const Favorite = () => {
 
   return (
     <>
-      <MainTitle>Оформлення замовлення</MainTitle>
-      <SecondaryTitle>Ваші товари:</SecondaryTitle>
+      <MainTitle>Оформлення оренди</MainTitle>
+      <SecondaryTitle>Обрані товари:</SecondaryTitle>
       <List>
         {cart.length !== 0 ? (
           cart.map((item) => (
