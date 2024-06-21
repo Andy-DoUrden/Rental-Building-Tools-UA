@@ -1,9 +1,9 @@
-import{n as t,r as c,b as w,j as e,g as v,h as D,L as z}from"./index-1Hj5w2Jg.js";import{D as O}from"./Dropdown-_epqYGjU.js";import{M as k,L as M,a as T,I as C,b as V,T as L,d as u,e as m,n as j}from"./Modal-Apwq9vwM.js";const F=t.div`
+import{n as t,r as c,b as O,j as e,g as D,h as z,L as k}from"./index-7fhQpMCX.js";import{D as v}from"./Dropdown-tMtsbduU.js";import{M,L as T,a as C,I as V,b as L,T as F,d as u,e as m,n as j}from"./Modal-HYB9rFqT.js";const I=t.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
-`,I=t.p`
+`,y=t.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@ import{n as t,r as c,b as w,j as e,g as v,h as D,L as z}from"./index-1Hj5w2Jg.js
   width: 100%;
   height: 80px;
   border-radius: 15px;
-`,y=t.button`
+`,b=t.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -165,7 +165,7 @@ import{n as t,r as c,b as w,j as e,g as v,h as D,L as z}from"./index-1Hj5w2Jg.js
 
   width: 474px;
   height: 48px;
-`;const b=t.input`
+`;const w=t.input`
   display: flex;
   align-items: center;
 
@@ -207,7 +207,7 @@ import{n as t,r as c,b as w,j as e,g as v,h as D,L as z}from"./index-1Hj5w2Jg.js
   &:hover {
     background-color: #c50;
   }
-`,S=["pending","accepted","declined","completed"],A=()=>{const[r,n]=c.useState(null),[o,p]=c.useState(null),[i,a]=c.useState(null),[,f]=w(),h=s=>{s.preventDefault();const x={};r&&(x.status=r),o&&(x.query=o),i&&(x.date=i),f(Object.keys(x).length>0?x:{}),n(null)};return e.jsx(e.Fragment,{children:e.jsxs(P,{onSubmit:h,children:[e.jsx(O,{filters:S,typeValue:r,setTypeValue:n}),e.jsx(b,{placeholder:"Вкажіть назву",onChange:s=>p(s.target.value)}),e.jsx(b,{type:"date",placeholder:"Вкажіть дату",onChange:s=>a(s.target.value)}),e.jsx(N,{type:"submit",children:"Пошук"})]})})},U=t.h2`
+`,S=["pending","accepted","declined","completed"],A=()=>{const[r,n]=c.useState(null),[o,p]=c.useState(null),[i,a]=c.useState(null),[,f]=O(),h=s=>{s.preventDefault();const x={};r&&(x.status=r),o&&(x.query=o),i&&(x.date=i),f(Object.keys(x).length>0?x:{}),n(null)};return e.jsx(e.Fragment,{children:e.jsxs(P,{onSubmit:h,children:[e.jsx(v,{filters:S,typeValue:r,setTypeValue:n}),e.jsx(w,{placeholder:"Вкажіть прізвище",onChange:s=>p(s.target.value)}),e.jsx(w,{type:"date",placeholder:"Вкажіть дату",onChange:s=>a(s.target.value)}),e.jsx(N,{type:"submit",children:"Пошук"})]})})},U=t.h2`
   color: #fff;
   font-size: 32px;
   text-align: center;
@@ -223,4 +223,4 @@ import{n as t,r as c,b as w,j as e,g as v,h as D,L as z}from"./index-1Hj5w2Jg.js
   color: #d80;
   font-size: 24px;
   font-weight: 500;
-`,_=r=>{const{item:n}=r,[o,p]=c.useState(null),[i,a]=c.useState(!1),[,f]=c.useState(null),[h]=v();return e.jsxs(B,{id:n.id,children:[e.jsxs(g,{children:["Інструменти: ",n.goods.length]}),e.jsx(y,{type:"button",onClick:()=>{f(n),a(!i)},children:"Детальніше"}),e.jsxs(g,{children:["Замовник: ",n.firstName," ",n.lastName]}),e.jsxs(g,{children:["Статус: ",e.jsx(E,{status:n.status,children:n.status})]}),e.jsxs(F,{children:[e.jsx(O,{filters:S,typeValue:o,setTypeValue:p}),e.jsx(y,{type:"button",onClick:()=>h({id:n._id,body:{status:`${o}`}}),children:"Змінити статус"})]}),i&&e.jsxs(k,{onClose:()=>{a(!1)},showModal:i,children:[e.jsx(U,{children:"Деталі замовника:"}),e.jsxs(W,{children:[e.jsxs(l,{children:["Замовник:"," ",e.jsxs(d,{children:[n.firstName," ",n.lastName]})]}),e.jsxs(l,{children:["Статус: ",e.jsx(d,{children:n.status})]}),e.jsxs(l,{children:["Адреса: ",e.jsx(d,{children:n.adress})]}),e.jsxs(l,{children:["Телефон: ",e.jsx(d,{children:n.number})]}),e.jsxs(l,{children:["Пошта: ",e.jsx(d,{children:n.email})]}),e.jsxs(l,{children:["Дата старту оренди: ",e.jsx(d,{children:n.rentStartDate})]}),e.jsxs(l,{children:["Дата кінця оренди: ",e.jsx(d,{children:n.rentEndDate})]})]}),e.jsx(M,{children:n.goods.map(s=>e.jsxs(T,{id:s[0].id,children:[e.jsx(C,{children:e.jsx(V,{src:s[0].img})}),e.jsxs(L,{children:[e.jsx(u,{children:s[0].name}),e.jsxs(u,{children:["Тип: ",e.jsx(m,{children:s[0].type})]}),e.jsxs(u,{children:["Ціна/день: ",e.jsxs(m,{children:[s[0].price," грн"]})]})]})]},j()))})]})]},j())},q=()=>{const[r]=w(),n=Object.fromEntries(r.entries()),{data:o,isLoading:p,error:i}=D({params:{...n}});return e.jsx(e.Fragment,{children:e.jsxs($,{children:[e.jsx(A,{}),e.jsx(I,{children:"Історія замовлень"}),p?e.jsx(z,{}):o.orders.map(a=>e.jsx(_,{item:a},a._id)),i&&e.jsx("h1",{children:"Something went wrong"})]})})};function H(){return e.jsx(q,{})}export{H as default};
+`,_=r=>{const{item:n}=r,[o,p]=c.useState(null),[i,a]=c.useState(!1),[,f]=c.useState(null),[h]=D();return e.jsxs(B,{id:n.id,children:[e.jsxs(g,{children:["Інструменти: ",n.goods.length]}),e.jsx(b,{type:"button",onClick:()=>{f(n),a(!i)},children:"Детальніше"}),e.jsxs(g,{children:["Замовник: ",n.firstName," ",n.lastName]}),e.jsxs(g,{children:["Статус: ",e.jsx(E,{status:n.status,children:n.status})]}),e.jsxs(I,{children:[e.jsx(v,{filters:S,typeValue:o,setTypeValue:p}),e.jsx(b,{type:"button",onClick:()=>h({id:n._id,body:{status:`${o}`}}),children:"Змінити статус"})]}),i&&e.jsxs(M,{onClose:()=>{a(!1)},showModal:i,children:[e.jsx(U,{children:"Деталі замовника:"}),e.jsxs(W,{children:[e.jsxs(l,{children:["Замовник:"," ",e.jsxs(d,{children:[n.firstName," ",n.lastName]})]}),e.jsxs(l,{children:["Статус: ",e.jsx(d,{children:n.status})]}),e.jsxs(l,{children:["Адреса: ",e.jsx(d,{children:n.adress})]}),e.jsxs(l,{children:["Телефон: ",e.jsx(d,{children:n.number})]}),e.jsxs(l,{children:["Пошта: ",e.jsx(d,{children:n.email})]}),e.jsxs(l,{children:["Дата старту оренди: ",e.jsx(d,{children:n.rentStartDate})]}),e.jsxs(l,{children:["Дата кінця оренди: ",e.jsx(d,{children:n.rentEndDate})]})]}),e.jsx(T,{children:n.goods.map(s=>e.jsxs(C,{id:s[0].id,children:[e.jsx(V,{children:e.jsx(L,{src:s[0].img})}),e.jsxs(F,{children:[e.jsx(u,{children:s[0].name}),e.jsxs(u,{children:["Тип: ",e.jsx(m,{children:s[0].type})]}),e.jsxs(u,{children:["Ціна/день: ",e.jsxs(m,{children:[s[0].price," грн"]})]})]})]},j()))})]})]},j())},q=()=>{const[r]=O(),n=Object.fromEntries(r.entries()),{data:o,isLoading:p,error:i}=z({params:{...n}});return e.jsx(e.Fragment,{children:e.jsxs($,{children:[e.jsx(A,{}),e.jsx(y,{children:"Історія замовлень"}),p?e.jsx(k,{}):o.orders.map(a=>e.jsx(_,{item:a},a._id)),i&&e.jsx(y,{children:"Помилка..."})]})})};function H(){return e.jsx(q,{})}export{H as default};

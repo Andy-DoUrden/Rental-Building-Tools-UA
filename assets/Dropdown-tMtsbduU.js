@@ -1,4 +1,4 @@
-import{n as t,r,j as n,i as x}from"./index-1Hj5w2Jg.js";import{n as f}from"./Modal-Apwq9vwM.js";const u=t.div`
+import{n as t,r,j as n,i as x}from"./index-7fhQpMCX.js";import{n as f}from"./Modal-HYB9rFqT.js";const u=t.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -85,4 +85,4 @@ import{n as t,r,j as n,i as x}from"./index-1Hj5w2Jg.js";import{n as f}from"./Mod
   &:hover {
     color: #0af;
   }
-`,y=({filters:e,typeValue:i,setTypeValue:d})=>{const[s,a]=r.useState(!1),p=r.useRef(null),c=r.useRef(null);return r.useEffect(()=>{const o=l=>{p.current&&!p.current.contains(l.target)&&!c.current.contains(l.target)&&a(!1)};return document.addEventListener("click",o),()=>{document.removeEventListener("click",o)}},[]),n.jsxs(u,{children:[n.jsxs(h,{ref:c,id:"selectButton",onClick:()=>{a(!s)},children:[n.jsx(m,{children:i||"оберіть тип"}),n.jsx(w,{width:20,height:20,isBrandDropDownOpen:s,children:n.jsx("use",{href:x+"#arrowDown"})})]}),n.jsx(g,{ref:p,children:n.jsx(D,{isBrandDropDownOpen:s,children:e.map(o=>n.jsx(j,{onClick:()=>{d(o)},itemValue:o,isItemActive:i,children:o},f()))})})]})};export{y as D};
+`,y=({filters:e,typeValue:i,setTypeValue:d})=>{const[s,a]=r.useState(!1),p=r.useRef(null),c=r.useRef(null);return r.useEffect(()=>{const o=l=>{p.current&&!p.current.contains(l.target)&&!c.current.contains(l.target)&&a(!1)};return document.addEventListener("click",o),()=>{document.removeEventListener("click",o)}},[]),n.jsxs(u,{children:[n.jsxs(h,{ref:c,id:"selectButton",onClick:()=>{a(!s)},children:[n.jsx(m,{children:i||"Оберіть тип"}),n.jsx(w,{width:20,height:20,isBrandDropDownOpen:s,children:n.jsx("use",{href:x+"#arrowDown"})})]}),n.jsx(g,{ref:p,children:n.jsx(D,{isBrandDropDownOpen:s,children:e.map(o=>n.jsx(j,{onClick:()=>{d(o)},itemValue:o,isItemActive:i,children:o},f()))})})]})};export{y as D};
